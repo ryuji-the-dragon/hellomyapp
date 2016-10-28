@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+	{{ thing.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h2>{{ thing.name }}</h2>
+    <p>{{ thing.description }}</p>
+
+    {% if social_accounts %}
+    <ul>
+        {% for social_account in social_accounts %}
+        <li>
+            <a href="http://{{ social_account.network }}.com/
+{{ social_account.username }}">
+                {{ social_account.network|title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if user == thing.user %}
+        <p>
+            <a href="{% url 'edit_thing' slug=thing.slug %}">
+                Edit me!
+            </a>
+        </p>
+    {% endif %}
+
+{% endblock content %}
+

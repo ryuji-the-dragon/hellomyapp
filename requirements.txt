@@ -1,0 +1,8 @@
+dj-database-url==0.4.1
+Django==1.9.6
+django-registration-redux==1.4
+hellowebapp-deploy
+virtualenv==15.0.3
+waitress==1.0.1
+whitenoise==3.2.2
+psycopg2==2.6.1
